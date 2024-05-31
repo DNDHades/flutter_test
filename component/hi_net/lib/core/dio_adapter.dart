@@ -19,7 +19,7 @@ class DioAdapter extends HiNetAdapter {
         response = await Dio()
             .delete(request.url(), data: request.params, options: options);
       }
-    } on DioError catch (e) {
+    } on DioException catch (e) {
       error = e;
       response = e.response;
     }

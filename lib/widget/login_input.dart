@@ -32,7 +32,7 @@ class _LoginInputState extends State<LoginInput> {
     // TODO: implement initState
     super.initState();
     _focusNode.addListener(() {
-      print("dnd000== _focusNode:${_focusNode.hasFocus}");
+      print("_focusNode:${_focusNode.hasFocus}");
       widget.focusChanged!(_focusNode.hasFocus);
     });
   }

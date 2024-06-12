@@ -1,3 +1,5 @@
+import 'package:common/util/gp_log_util.dart';
+
 enum HttpMethod { GET, POST, DELETE }
 
 ///基础请求
@@ -32,7 +34,7 @@ abstract class HiBaseRequest {
     } else {
       uri = Uri.http(authority(), pathStr, params);
     }
-    print('dnd0000===url:${uri.toString()}');
+    GpLogUtil.ld('HiBaseRequest:$uri');
     return uri.toString();
   }
 

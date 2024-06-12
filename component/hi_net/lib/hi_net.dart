@@ -1,3 +1,4 @@
+import 'package:common/util/gp_log_util.dart';
 import 'package:hi_net/core/dio_adapter.dart';
 import 'package:hi_net/request/hi_base_request.dart';
 
@@ -74,6 +75,6 @@ class HiNet {
   }
 
   void printLog(log) {
-    print('dnd0000===hi_net:' + log.toString());
+    GpLogUtil.ld('HiNet:$log');
   }
 }

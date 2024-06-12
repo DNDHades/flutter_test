@@ -1,3 +1,4 @@
+import 'package:common/util/gp_log_util.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter02/widget/appbar.dart';
 import 'package:hi_base/string_util.dart';
@@ -14,7 +15,7 @@ class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
 
   @override
-  _LoginPageState createState() => _LoginPageState();
+  State<LoginPage> createState() => _LoginPageState();
 }
 
 class _LoginPageState extends State<LoginPage> {
@@ -83,20 +84,20 @@ class _LoginPageState extends State<LoginPage> {
   void send() async {
     try {
       var result = await LoginDao.login(userName!, password!);
-      print(result);
+      GpLogUtil.ld(result);
       if (result['code'] == 0) {
-        print('登录成功');
+        GpLogUtil.ld("登录成功");
         showToast('登录成功');
         // HiNavigator.getInstance().onJumpTo(RouteStatus.home);
       } else {
-        print(result['msg']);
+        GpLogUtil.ld(result['msg']);
         showWarnToast(result['msg']);
       }
     } on NeedAuth catch (e) {
-      print(e);
+      GpLogUtil.ld(e.message);
       showWarnToast(e.message);
     } on HiNetError catch (e) {
-      print(e);
+      GpLogUtil.ld(e.message);
       showWarnToast(e.message);
     }
   }

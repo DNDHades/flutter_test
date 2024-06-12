@@ -16,9 +16,7 @@ class HiNet {
   static HiNet? _instance;
 
   static HiNet getInstance() {
-    if (_instance == null) {
-      _instance = HiNet._();
-    }
+    _instance ??= HiNet._();
     return _instance!;
   }
 
@@ -72,10 +70,10 @@ class HiNet {
   }
 
   void setErrorInterceptor(HiErrorInterceptor interceptor) {
-    this._hiErrorInterceptor = interceptor;
+    _hiErrorInterceptor = interceptor;
   }
 
   void printLog(log) {
-    print('hi_net:' + log.toString());
+    print('dnd0000===hi_net:' + log.toString());
   }
 }

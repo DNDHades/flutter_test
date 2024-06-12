@@ -32,7 +32,7 @@ abstract class HiBaseRequest {
     } else {
       uri = Uri.http(authority(), pathStr, params);
     }
-    print('url:${uri.toString()}');
+    print('dnd0000===url:${uri.toString()}');
     return uri.toString();
   }
 
